@@ -15,6 +15,7 @@
 
 ![lQLPJwQZZ8uEPHjNAuHNBT-w-GsXiksiNDsEv3DzmcCeAQ_1343_737](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/0877be6e-13c4-4efe-b07c-40892f2c80ff)
 
+![lQLPJwem5nBKvHjNAtjNBTuwqzkE668Z_mUEv3DzmcCeAw_1339_728](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/04fd19ae-10a3-46bc-93d8-47700be75058)
 
 
 —————————————————————————————————————————————————————————
