@@ -1,3 +1,9 @@
+# ComfyUI Manager 简体中文版
+
+
+
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
 # ComfyUI Manager
 
 ## Installation[method1] (General installation method: ComfyUI-Manager only)
