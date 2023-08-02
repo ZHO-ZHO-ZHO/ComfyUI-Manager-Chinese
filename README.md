@@ -8,11 +8,11 @@
 
 ![lQLPJwCL6Sa9vHjNAyvNAW6wsFmwEWvEhLUEv3DzmcCeAg_366_811](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/756ac329-2101-4d25-a5b0-0287ba92ff81)
 
+![lQLPJxJPYl6ePHjNAxvNAV2wpx5tRbdWohIEv3DzmYCeAA_349_795](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/3f360a70-c4d1-4fb1-81fb-f29e14339046)
+
 ![lQLPJwQZZ8uEPHjNAuHNBT-w-GsXiksiNDsEv3DzmcCeAQ_1343_737](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/0877be6e-13c4-4efe-b07c-40892f2c80ff)
 
 ![lQLPJxXc4QNkvHjNAtzNBW-w0mKBW54ytwcEv3DzmYCeAQ_1391_732](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/cafa8b24-6f6d-4d84-91b2-28284cde08e3)
-
-![lQLPJxJPYl6ePHjNAxvNAV2wpx5tRbdWohIEv3DzmYCeAA_349_795](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/3f360a70-c4d1-4fb1-81fb-f29e14339046)
 
 ![lQLPJwem5nBKvHjNAtjNBTuwqzkE668Z_mUEv3DzmcCeAw_1339_728](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/04fd19ae-10a3-46bc-93d8-47700be75058)
 
