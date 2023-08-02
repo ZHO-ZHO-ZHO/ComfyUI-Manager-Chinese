@@ -1,19 +1,20 @@
 
+
 # ComfyUI Manager 简体中文版
 
 在原作者的基础上完成了汉化
 
-![Uploading lQLPJwem5nBKvHjNAtjNBTuwqzkE668Z_mUEv3DzmcCeAw_1339_728.png…]()
+![lQLPJxXc4QNkvHjNAtzNBW-w0mKBW54ytwcEv3DzmYCeAQ_1391_732](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/cafa8b24-6f6d-4d84-91b2-28284cde08e3)
 
-![Uploading lQLPJxJPYl6ePHjNAxvNAV2wpx5tRbdWohIEv3DzmYCeAA_349_795.png…]()
 
-![lQLPJxyc6zx3fHjNAizNASCwtIB4414-7IUEv3DzmcCeAA_288_556](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/20c988e7-e3e4-4463-964f-fd13f406c109)
+![lQLPJxJPYl6ePHjNAxvNAV2wpx5tRbdWohIEv3DzmYCeAA_349_795](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/3f360a70-c4d1-4fb1-81fb-f29e14339046)
 
-![lQLPJwCL6Sa9vHjNAyvNAW6wsFmwEWvEhLUEv3DzmcCeAg_366_811](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/f6ef594c-7c4a-49b6-9925-c31882f9b0d6)
+![lQLPJxyc6zx3fHjNAizNASCwtIB4414-7IUEv3DzmcCeAA_288_556](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/da1e72d9-9b78-46b0-847d-410e89ef2d92)
 
-![lQLPJwQZZ8uEPHjNAuHNBT-w-GsXiksiNDsEv3DzmcCeAQ_1343_737](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/58acc3ef-0578-4494-a196-005147813fd9)
+![lQLPJwCL6Sa9vHjNAyvNAW6wsFmwEWvEhLUEv3DzmcCeAg_366_811](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/756ac329-2101-4d25-a5b0-0287ba92ff81)
 
-![Uploading lQLPJxXc4QNkvHjNAtzNBW-w0mKBW54ytwcEv3DzmYCeAQ_1391_732.png…]()
+![lQLPJwQZZ8uEPHjNAuHNBT-w-GsXiksiNDsEv3DzmcCeAQ_1343_737](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/0877be6e-13c4-4efe-b07c-40892f2c80ff)
+
 
 
 —————————————————————————————————————————————————————————
