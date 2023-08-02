@@ -101,42 +101,42 @@ async function install_custom_node(target, caller, mode) {
 }
 
 async function updateComfyUI() {
-	update_comfyui_button.innerText = "Updating ComfyUI...";
+	update_comfyui_button.innerText = "ComfyUI更新中...";
 	update_comfyui_button.disabled = true;
 
 	try {
 		const response = await api.fetchApi('/comfyui_manager/update_comfyui');
 
 		if(response.status == 400) {
-			app.ui.dialog.show('Failed to update ComfyUI');
+			app.ui.dialog.show('ComfyUI更新失败');
 			app.ui.dialog.element.style.zIndex = 9999;
 			return false;
 		}
 
 		if(response.status == 201) {
-			app.ui.dialog.show('ComfyUI has been successfully updated.');
+			app.ui.dialog.show('ComfyUI已更新成功.');
 			app.ui.dialog.element.style.zIndex = 9999;
 		}
 		else {
-			app.ui.dialog.show('ComfyUI is already up to date with the latest version.');
+			app.ui.dialog.show('ComfyUI已是最新版本.');
 			app.ui.dialog.element.style.zIndex = 9999;
 		}
 
 		return true;
 	}
 	catch(exception) {
-		app.ui.dialog.show(`Failed to update ComfyUI / ${exception}`);
+		app.ui.dialog.show(`ComfyUI更新失败 / ${exception}`);
 		app.ui.dialog.element.style.zIndex = 9999;
 		return false;
 	}
 	finally {
 		update_comfyui_button.disabled = false;
-		update_comfyui_button.innerText = "Update ComfyUI";
+		update_comfyui_button.innerText = "更新ComfyUI";
 	}
 }
 
 async function fetchUpdates() {
-	fetch_updates_button.innerText = "Fetching updates...";
+	fetch_updates_button.innerText = "获取更新中...";
 	fetch_updates_button.disabled = true;
 
 	try {
@@ -147,30 +147,30 @@ async function fetchUpdates() {
 		const response = await api.fetchApi(`/customnode/fetch_updates?mode=${mode}`);
 
 		if(response.status == 400) {
-			app.ui.dialog.show('Failed to fetch updates.');
+			app.ui.dialog.show('获取更新失败.');
 			app.ui.dialog.element.style.zIndex = 9999;
 			return false;
 		}
 
 		if(response.status == 201) {
-			app.ui.dialog.show('There is an updated extension available.');
+			app.ui.dialog.show('有更新的插件可用.');
 			app.ui.dialog.element.style.zIndex = 9999;
 		}
 		else {
-			app.ui.dialog.show('All extensions are already up-to-date with the latest versions.');
+			app.ui.dialog.show('所有插件均为最新版.');
 			app.ui.dialog.element.style.zIndex = 9999;
 		}
 
 		return true;
 	}
 	catch(exception) {
-		app.ui.dialog.show(`Failed to update ComfyUI / ${exception}`);
+		app.ui.dialog.show(`ComfyUI更新失败 / ${exception}`);
 		app.ui.dialog.element.style.zIndex = 9999;
 		return false;
 	}
 	finally {
 		fetch_updates_button.disabled = false;
-		fetch_updates_button.innerText = "Fetch Updates";
+		fetch_updates_button.innerText = "获取更新";
 	}
 }
 
@@ -191,13 +191,13 @@ async function install_model(target) {
 			return true;
 		}
 		catch(exception) {
-			app.ui.dialog.show(`Install failed: ${target.title} / ${exception}`);
+			app.ui.dialog.show(`按住失败: ${target.title} / ${exception}`);
 			app.ui.dialog.element.style.zIndex = 9999;
 			return false;
 		}
 		finally {
 			await ModelInstaller.instance.invalidateControl();
-			ModelInstaller.instance.updateMessage("<BR>To apply the installed model, please click the 'Refresh' button on the main menu.");
+			ModelInstaller.instance.updateMessage("<BR>若需使用已安装模型，请点击'Refresh/刷新' 按钮.");
 		}
 	}
 }
@@ -367,16 +367,16 @@ class CustomNodesInstaller extends ComfyDialog {
 		header1.innerHTML = '&nbsp;&nbsp;ID&nbsp;&nbsp;';
 		header1.style.width = "20px";
 		var header2 = document.createElement('th');
-		header2.innerHTML = 'Author';
+		header2.innerHTML = '作者';
 		header2.style.width = "150px";
 		var header3 = document.createElement('th');
-		header3.innerHTML = 'Name';
+		header3.innerHTML = '名称';
 		header3.style.width = "200px";
 		var header4 = document.createElement('th');
-		header4.innerHTML = 'Description';
+		header4.innerHTML = '简介';
 		header4.style.width = "500px";
 		var header5 = document.createElement('th');
-		header5.innerHTML = 'Install';
+		header5.innerHTML = '是否安装';
 		header5.style.width = "130px";
 		headerRow.appendChild(header1);
 		headerRow.appendChild(header2);
@@ -429,42 +429,42 @@ class CustomNodesInstaller extends ComfyDialog {
 					installBtn3.style.color = 'white';
 					this.install_buttons.push(installBtn3);
 
-					installBtn.innerHTML = 'Uninstall';
+					installBtn.innerHTML = '卸载';
 					installBtn.style.backgroundColor = 'red';
 					break;
 				case 'Update':
 					installBtn2 = document.createElement('button');
-					installBtn2.innerHTML = 'Update';
+					installBtn2.innerHTML = '更新';
 					installBtn2.style.backgroundColor = 'blue';
 					installBtn2.style.color = 'white';
 					this.install_buttons.push(installBtn2);
 
 					installBtn3 = document.createElement('button');
-					installBtn3.innerHTML = 'Disable';
+					installBtn3.innerHTML = '禁用';
 					installBtn3.style.backgroundColor = 'MediumSlateBlue';
 					installBtn3.style.color = 'white';
 					this.install_buttons.push(installBtn3);
 
-					installBtn.innerHTML = 'Uninstall';
+					installBtn.innerHTML = '卸载';
 					installBtn.style.backgroundColor = 'red';
 					break;
 				case 'True':
 					installBtn3 = document.createElement('button');
-					installBtn3.innerHTML = 'Disable';
+					installBtn3.innerHTML = '禁用';
 					installBtn3.style.backgroundColor = 'MediumSlateBlue';
 					installBtn3.style.color = 'white';
 					this.install_buttons.push(installBtn3);
 
-					installBtn.innerHTML = 'Uninstall';
+					installBtn.innerHTML = '卸载';
 					installBtn.style.backgroundColor = 'red';
 					break;
 				case 'False':
-					installBtn.innerHTML = 'Install';
+					installBtn.innerHTML = '安装';
 					installBtn.style.backgroundColor = 'black';
 					installBtn.style.color = 'white';
 					break;
 				default:
-					installBtn.innerHTML = 'Try Install';
+					installBtn.innerHTML = '尝试安装';
 					installBtn.style.backgroundColor = 'Gray';
 					installBtn.style.color = 'white';
 				}
@@ -489,8 +489,8 @@ class CustomNodesInstaller extends ComfyDialog {
 
 				installBtn.style.width = "120px";
 				installBtn.addEventListener('click', function() {
-					if(this.innerHTML == 'Uninstall') {
-						if (confirm(`Are you sure uninstall ${data.title}?`)) {
+					if(this.innerHTML == '卸载') {
+						if (confirm(`确定要卸载 ${data.title}?`)) {
 							install_custom_node(data, CustomNodesInstaller.instance, 'uninstall');
 						}
 					}
@@ -538,11 +538,11 @@ class CustomNodesInstaller extends ComfyDialog {
 
 		let items =
 			[
-				{ value:'*', text:'Filter: all' },
-				{ value:'Disabled', text:'Filter: disabled' },
-				{ value:'Update', text:'Filter: update' },
-				{ value:'True', text:'Filter: installed' },
-				{ value:'False', text:'Filter: not-installed' },
+				{ value:'*', text:'过滤器: 所有' },
+				{ value:'Disabled', text:'过滤器: 禁用' },
+				{ value:'Update', text:'过滤器: 更新' },
+				{ value:'True', text:'过滤器: 已安装' },
+				{ value:'False', text:'过滤器: 未安装' },
 			];
 
 		items.forEach(item => {
@@ -563,7 +563,7 @@ class CustomNodesInstaller extends ComfyDialog {
 
 	createHeaderControls() {
 		let self = this;
-		this.search_box = $el('input', {type:'text', id:'manager-customnode-search-box', placeholder:'input search keyword', value:this.search_keyword}, []);
+		this.search_box = $el('input', {type:'text', id:'manager-customnode-search-box', placeholder:'输入关键词-英文', value:this.search_keyword}, []);
 		this.search_box.style.height = "25px";
 		this.search_box.onkeydown = (event) => {
 				if (event.key === 'Enter') {
@@ -578,7 +578,7 @@ class CustomNodesInstaller extends ComfyDialog {
 
 
 		let search_button = document.createElement("button");
-		search_button.innerHTML = "Search";
+		search_button.innerHTML = "搜索";
 		search_button.onclick = () => {
 			self.search_keyword = self.search_box.value;
 			self.apply_searchbox();
@@ -602,7 +602,7 @@ class CustomNodesInstaller extends ComfyDialog {
 
 	async createBottomControls() {
 		let close_button = document.createElement("button");
-		close_button.innerHTML = "Close";
+		close_button.innerHTML = "关闭";
 		close_button.onclick = () => { this.close(); }
 		close_button.style.display = "inline-block";
 
@@ -622,7 +622,7 @@ class CustomNodesInstaller extends ComfyDialog {
 			this.element.style.display = "block";
 		}
 		catch(exception) {
-			app.ui.dialog.show(`Failed to get custom node list. / ${exception}`);
+			app.ui.dialog.show(`获取custom node list失败. / ${exception}`);
 		}
 	}
 }
@@ -733,19 +733,19 @@ class AlternativesInstaller extends ComfyDialog {
 		header1.innerHTML = '&nbsp;&nbsp;ID&nbsp;&nbsp;';
 		header1.style.width = "20px";
 		var header2 = document.createElement('th');
-		header2.innerHTML = 'Tags';
+		header2.innerHTML = '标签';
 		header2.style.width = "200px";
 		var header3 = document.createElement('th');
-		header3.innerHTML = 'Author';
+		header3.innerHTML = '作者';
 		header3.style.width = "150px";
 		var header4 = document.createElement('th');
-		header4.innerHTML = 'Title';
+		header4.innerHTML = '名称';
 		header4.style.width = "200px";
 		var header5 = document.createElement('th');
-		header5.innerHTML = 'Description';
+		header5.innerHTML = '简介';
 		header5.style.width = "500px";
 		var header6 = document.createElement('th');
-		header6.innerHTML = 'Install';
+		header6.innerHTML = '是否安装';
 		header6.style.width = "130px";
 		headerRow.appendChild(header1);
 		headerRow.appendChild(header2);
@@ -802,45 +802,45 @@ class AlternativesInstaller extends ComfyDialog {
 						installBtn3.style.color = 'white';
 						this.install_buttons.push(installBtn3);
 
-						installBtn.innerHTML = 'Uninstall';
+						installBtn.innerHTML = '卸载';
 						installBtn.style.backgroundColor = 'red';
 						installBtn.style.color = 'white';
 						break;
 					case 'Update':
 						installBtn2 = document.createElement('button');
-						installBtn2.innerHTML = 'Update';
+						installBtn2.innerHTML = '更新';
 						installBtn2.style.backgroundColor = 'blue';
 						installBtn2.style.color = 'white';
 						this.install_buttons.push(installBtn2);
 
 						installBtn3 = document.createElement('button');
-						installBtn3.innerHTML = 'Disable';
+						installBtn3.innerHTML = '禁用';
 						installBtn3.style.backgroundColor = 'MediumSlateBlue';
 						installBtn3.style.color = 'white';
 						this.install_buttons.push(installBtn3);
 
-						installBtn.innerHTML = 'Uninstall';
+						installBtn.innerHTML = '卸载';
 						installBtn.style.backgroundColor = 'red';
 						installBtn.style.color = 'white';
 						break;
 					case 'True':
 						installBtn3 = document.createElement('button');
-						installBtn3.innerHTML = 'Disable';
+						installBtn3.innerHTML = '禁用';
 						installBtn3.style.backgroundColor = 'MediumSlateBlue';
 						installBtn3.style.color = 'white';
 						this.install_buttons.push(installBtn3);
 
-						installBtn.innerHTML = 'Uninstall';
+						installBtn.innerHTML = '卸载';
 						installBtn.style.backgroundColor = 'red';
 						installBtn.style.color = 'white';
 						break;
 					case 'False':
-						installBtn.innerHTML = 'Install';
+						installBtn.innerHTML = '安装';
 						installBtn.style.backgroundColor = 'black';
 						installBtn.style.color = 'white';
 						break;
 					default:
-						installBtn.innerHTML = 'Try Install';
+						installBtn.innerHTML = '尝试安装';
 						installBtn.style.backgroundColor = 'Gray';
 						installBtn.style.color = 'white';
 					}
@@ -867,7 +867,7 @@ class AlternativesInstaller extends ComfyDialog {
 					installBtn.style.width = "120px";
 					installBtn.addEventListener('click', function() {
 						if(this.innerHTML == 'Uninstall') {
-							if (confirm(`Are you sure uninstall ${data.title}?`)) {
+							if (confirm(`确定要卸载 ${data.title}?`)) {
 								install_custom_node(data.custom_node, AlternativesInstaller.instance, 'uninstall');
 							}
 						}
@@ -917,11 +917,11 @@ class AlternativesInstaller extends ComfyDialog {
 
 		let items =
 			[
-				{ value:'*', text:'Filter: all' },
-				{ value:'Disabled', text:'Filter: disabled' },
-				{ value:'Update', text:'Filter: update' },
-				{ value:'True', text:'Filter: installed' },
-				{ value:'False', text:'Filter: not-installed' },
+				{ value:'*', text:'过滤器: 所有' },
+				{ value:'Disabled', text:'过滤器: 禁用' },
+				{ value:'Update', text:'过滤器: 更新' },
+				{ value:'True', text:'过滤器: 已安装' },
+				{ value:'False', text:'过滤器: 未安装' },
 			];
 
 		items.forEach(item => {
@@ -942,7 +942,7 @@ class AlternativesInstaller extends ComfyDialog {
 
 	createHeaderControls() {
 		let self = this;
-		this.search_box = $el('input', {type:'text', id:'manager-alternode-search-box', placeholder:'input search keyword', value:this.search_keyword}, []);
+		this.search_box = $el('input', {type:'text', id:'manager-alternode-search-box', placeholder:'输入关键词-英文', value:this.search_keyword}, []);
 		this.search_box.style.height = "25px";
 		this.search_box.onkeydown = (event) => {
 				if (event.key === 'Enter') {
@@ -956,7 +956,7 @@ class AlternativesInstaller extends ComfyDialog {
 			};
 
 		let search_button = document.createElement("button");
-		search_button.innerHTML = "Search";
+		search_button.innerHTML = "搜索";
 		search_button.onclick = () => {
 			self.search_keyword = self.search_box.value;
 			self.apply_searchbox();
@@ -979,7 +979,7 @@ class AlternativesInstaller extends ComfyDialog {
 
 	async createBottomControls() {
 		var close_button = document.createElement("button");
-		close_button.innerHTML = "Close";
+		close_button.innerHTML = "关闭";
 		close_button.onclick = () => { this.close(); }
 		close_button.style.display = "inline-block";
 
@@ -1028,7 +1028,7 @@ class ModelInstaller extends ComfyDialog {
 		return [
 			$el("button", {
 				type: "button",
-				textContent: "Close",
+				textContent: "关闭",
 				onclick: () => { this.close(); }
 				})
 		];
@@ -1106,23 +1106,23 @@ class ModelInstaller extends ComfyDialog {
 		header1.innerHTML = '&nbsp;&nbsp;ID&nbsp;&nbsp;';
 		header1.style.width = "20px";
 		var header2 = document.createElement('th');
-		header2.innerHTML = 'Type';
+		header2.innerHTML = '类型';
 		header2.style.width = "100px";
 		var header3 = document.createElement('th');
-		header3.innerHTML = 'Base';
+		header3.innerHTML = '底膜';
 		header3.style.width = "100px";
 		var header4 = document.createElement('th');
-		header4.innerHTML = 'Name';
+		header4.innerHTML = '名称';
 		header4.style.width = "200px";
 		var header5 = document.createElement('th');
-		header5.innerHTML = 'Filename';
+		header5.innerHTML = '文件名';
 		header5.style.width = "250px";
 		header5.style.tableLayout = "fixed";
 		var header6 = document.createElement('th');
-		header6.innerHTML = 'description';
+		header6.innerHTML = '简介';
 		header6.style.width = "380px";
 		var header_down = document.createElement('th');
-		header_down.innerHTML = 'Download';
+		header_down.innerHTML = '是否下载';
 		header_down.style.width = "50px";
 
 		headerRow.appendChild(header1);
@@ -1170,13 +1170,13 @@ class ModelInstaller extends ComfyDialog {
 
 				switch(data.installed) {
 				case 'True':
-					installBtn.innerHTML = 'Installed';
+					installBtn.innerHTML = '已安装';
 					installBtn.style.backgroundColor = 'green';
 					installBtn.style.color = 'white';
 					installBtn.disabled = true;
 					break;
 				default:
-					installBtn.innerHTML = 'Install';
+					installBtn.innerHTML = '安装';
 					installBtn.style.backgroundColor = 'black';
 					installBtn.style.color = 'white';
 					break;
@@ -1229,9 +1229,9 @@ class ModelInstaller extends ComfyDialog {
 
 		let items =
 			[
-				{ value:'*', text:'Filter: all' },
-				{ value:'True', text:'Filter: installed' },
-				{ value:'False', text:'Filter: not-installed' },
+				{ value:'*', text:'过滤器: 所有' },
+				{ value:'True', text:'过滤器: 已安装' },
+				{ value:'False', text:'过滤器: 未安装' },
 			];
 
 		items.forEach(item => {
@@ -1252,7 +1252,7 @@ class ModelInstaller extends ComfyDialog {
 
 	createHeaderControls() {
 		let self = this;
-		this.search_box = $el('input', {type:'text', id:'manager-model-search-box', placeholder:'input search keyword', value:this.search_keyword}, []);
+		this.search_box = $el('input', {type:'text', id:'manager-model-search-box', placeholder:'输入关键词-英文', value:this.search_keyword}, []);
 		this.search_box.style.height = "25px";
 		this.search_box.onkeydown = (event) => {
 				if (event.key === 'Enter') {
@@ -1266,7 +1266,7 @@ class ModelInstaller extends ComfyDialog {
 			};
 
 		let search_button = document.createElement("button");
-		search_button.innerHTML = "Search";
+		search_button.innerHTML = "搜索";
 		search_button.onclick = () => {
 			self.search_keyword = self.search_box.value;
 			self.apply_searchbox();
@@ -1289,7 +1289,7 @@ class ModelInstaller extends ComfyDialog {
 
 	async createBottomControls() {
 		var close_button = document.createElement("button");
-		close_button.innerHTML = "Close";
+		close_button.innerHTML = "关闭";
 		close_button.onclick = () => { this.close(); }
 		close_button.style.display = "inline-block";
 
@@ -1320,13 +1320,13 @@ class ManagerMenuDialog extends ComfyDialog {
 
 	createButtons() {
 		this.local_mode_checkbox = $el("input",{type:'checkbox', id:"use_local_db"},[])
-		const checkbox_text = $el("label",{},[" Use local DB"])
+		const checkbox_text = $el("label",{},[" 使用本地DB"])
 		checkbox_text.style.color = "var(--fg-color)"
 
 		update_comfyui_button =
 				$el("button", {
 					type: "button",
-					textContent: "Update ComfyUI",
+					textContent: "升级ComfyUI",
 					onclick:
 						() => updateComfyUI()
 				});
@@ -1334,16 +1334,16 @@ class ManagerMenuDialog extends ComfyDialog {
 		fetch_updates_button =
 				$el("button", {
 					type: "button",
-					textContent: "Fetch Updates",
+					textContent: "获取更新",
 					onclick:
 						() => fetchUpdates()
 				});
 
 		let preview_combo = document.createElement("select");
-        preview_combo.appendChild($el('option', {value:'auto', text:'Preview method: Auto'}, []));
-        preview_combo.appendChild($el('option', {value:'taesd', text:'Preview method: TAESD'}, []));
-        preview_combo.appendChild($el('option', {value:'latent2rgb', text:'Preview method: Latent2RGB'}, []));
-        preview_combo.appendChild($el('option', {value:'none', text:'Preview method: None'}, []));
+        preview_combo.appendChild($el('option', {value:'auto', text:'预览方法: 自动'}, []));
+        preview_combo.appendChild($el('option', {value:'taesd', text:'预览方法: TAESD'}, []));
+        preview_combo.appendChild($el('option', {value:'latent2rgb', text:'预览方法: Latent2RGB'}, []));
+        preview_combo.appendChild($el('option', {value:'none', text:'预览方法: 无'}, []));
 
         api.fetchApi('/manager/preview_method')
         .then(response => response.text())
@@ -1355,13 +1355,13 @@ class ManagerMenuDialog extends ComfyDialog {
 
 		const res =
 			[
-				$el("tr.td", {width:"100%"}, [$el("font", {size:6, color:"white"}, [`ComfyUI Manager Menu`])]),
+				$el("tr.td", {width:"100%"}, [$el("font", {size:6, color:"white"}, [`管理器菜单`])]),
 				$el("br", {}, []),
 				$el("div", {}, [this.local_mode_checkbox, checkbox_text]),
 				$el("br", {}, []),
 				$el("button", {
 					type: "button",
-					textContent: "Install Custom Nodes",
+					textContent: "安装Nodes",
 					onclick:
 						() => {
 							if(!CustomNodesInstaller.instance)
@@ -1372,7 +1372,7 @@ class ManagerMenuDialog extends ComfyDialog {
 
 				$el("button", {
 					type: "button",
-					textContent: "Install Missing Custom Nodes",
+					textContent: "安装缺失Nodes",
 					onclick:
 						() => {
 							if(!CustomNodesInstaller.instance)
@@ -1383,7 +1383,7 @@ class ManagerMenuDialog extends ComfyDialog {
 
 				$el("button", {
 					type: "button",
-					textContent: "Install Models",
+					textContent: "安装模型",
 					onclick:
 						() => {
 							if(!ModelInstaller.instance)
@@ -1399,7 +1399,7 @@ class ManagerMenuDialog extends ComfyDialog {
 				$el("br", {}, []),
 				$el("button", {
 					type: "button",
-					textContent: "Alternatives of A1111",
+					textContent: "A1111功能平替",
 					onclick:
 						() => {
 							if(!AlternativesInstaller.instance)
@@ -1411,7 +1411,7 @@ class ManagerMenuDialog extends ComfyDialog {
 				$el("br", {}, []),
 				$el("button", {
 					type: "button",
-					textContent: "ComfyUI Community Manual",
+					textContent: "ComfyUI使用手册",
 					onclick: () => { window.open("https://blenderneko.github.io/ComfyUI-docs/", "comfyui-community-manual"); }
 				}),
 
@@ -1423,7 +1423,7 @@ class ManagerMenuDialog extends ComfyDialog {
 
 				$el("button", {
 					type: "button",
-					textContent: "Close",
+					textContent: "关闭",
 					onclick: () => this.close()
 				}),
 				$el("br", {}, []),
@@ -1461,7 +1461,7 @@ app.registerExtension({
 		menu.append(separator);
 
 		const managerButton = document.createElement("button");
-		managerButton.textContent = "Manager";
+		managerButton.textContent = "管理器";
 		managerButton.onclick = () => {
 				if(!ManagerMenuDialog.instance)
 					ManagerMenuDialog.instance = new ManagerMenuDialog();
