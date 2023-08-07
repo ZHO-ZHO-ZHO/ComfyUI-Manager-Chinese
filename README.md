@@ -5,7 +5,7 @@
 声明：我并不是ComfyUI Manager的作者，我只是对界面做了汉化，原作者在[ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager)
 
 
-![lQLPJxyc6zx3fHjNAizNASCwtIB4414-7IUEv3DzmcCeAA_288_556](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/da1e72d9-9b78-46b0-847d-410e89ef2d92)
+
 
 ![lQLPJwCL6Sa9vHjNAyvNAW6wsFmwEWvEhLUEv3DzmcCeAg_366_811](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Manager-Zh-Chinese/assets/140084057/756ac329-2101-4d25-a5b0-0287ba92ff81)
 
