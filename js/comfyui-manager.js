@@ -191,7 +191,7 @@ async function install_model(target) {
 			return true;
 		}
 		catch(exception) {
-			app.ui.dialog.show(`按住失败: ${target.title} / ${exception}`);
+			app.ui.dialog.show(`安装失败: ${target.title} / ${exception}`);
 			app.ui.dialog.element.style.zIndex = 9999;
 			return false;
 		}
